@@ -5,35 +5,32 @@ public class PalindromeChecker {
     // Main method - Entry point of the application
     public static void main(String[] args) {
 
-        String word = "radar";
+         String word = "refer";
 
-        // Convert string to character array
-        char[] characters = word.toCharArray();
+        Stack<Character> stack = new Stack<>();
 
-        int start = 0;
-        int end = characters.length - 1;
+        // Push characters into stack
+        for (int i = 0; i < word.length(); i++) {
+            stack.push(word.charAt(i));
+        }
 
         boolean isPalindrome = true;
 
-        // Two-pointer comparison
-        while (start < end) {
-
-            if (characters[start] != characters[end]) {
+        // Pop and compare
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) != stack.pop()) {
                 isPalindrome = false;
                 break;
             }
-
-            start++;
-            end--;
         }
 
-        // Display result
+        // Print result
         if (isPalindrome) {
             System.out.println(word + " is a Palindrome.");
         } else {
             System.out.println(word + " is NOT a Palindrome.");
         }
 
-        System.out.println("Program Ended.");
+        System.out.println("Program Finished.");
     }
 }
