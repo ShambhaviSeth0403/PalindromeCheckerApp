@@ -5,19 +5,23 @@ public class PalindromeChecker {
     // Main method - Entry point of the application
     public static void main(String[] args) {
 
-        // Display Application Name
-        System.out.println("===================================");
-        System.out.println("      PALINDROME CHECKER APP       ");
-        System.out.println("===================================");
+        // Hardcoded string
+        String word = "madam";
 
-        // Display Application Version
-        System.out.println("Version: 1.0.0");
+        // Reverse the string
+        String reversed = "";
 
-        // Welcome Message
-        System.out.println("Welcome to the Palindrome Checker Application!");
-        System.out.println("The program will help you check whether a word or number is a palindrome.");
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed += word.charAt(i);
+        }
 
-        // Program continues to next use case
-        System.out.println("\nProceeding to next functionality...");
+        // Check palindrome condition
+        if (word.equals(reversed)) {
+            System.out.println(word + " is a Palindrome.");
+        } else {
+            System.out.println(word + " is NOT a Palindrome.");
+        }
+
+        System.out.println("Program Ended.");
     }
 }
