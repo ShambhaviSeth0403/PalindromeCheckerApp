@@ -5,23 +5,24 @@ public class PalindromeChecker {
     // Main method - Entry point of the application
     public static void main(String[] args) {
 
-        // Hardcoded string
-        String word = "madam";
+       // Original string
+        String word = "level";
 
-        // Reverse the string
+        // Variable to store reversed string
         String reversed = "";
 
+        // Reverse using for loop
         for (int i = word.length() - 1; i >= 0; i--) {
-            reversed += word.charAt(i);
+            reversed = reversed + word.charAt(i);
         }
 
-        // Check palindrome condition
+        // Compare original and reversed
         if (word.equals(reversed)) {
             System.out.println(word + " is a Palindrome.");
         } else {
             System.out.println(word + " is NOT a Palindrome.");
         }
 
-        System.out.println("Program Ended.");
+        System.out.println("Program Finished.");
     }
 }
